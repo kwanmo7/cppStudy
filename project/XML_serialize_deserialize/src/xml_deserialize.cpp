@@ -2,6 +2,8 @@
 #include "../third_party/pugixml/pugixml.hpp"
 #include <iostream>
 
+using namespace std;
+
 // 영화 데이터 검증 함수
 bool validate_movie(const movie &m){
   if(m.id == 0){

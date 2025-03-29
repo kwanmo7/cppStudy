@@ -14,6 +14,7 @@
   - `serialize()`を呼び出してXMLファイルを生成。
   - `deserialize()`を呼び出してXMLファイルからデータを復元。
   - テストのために`assert`を使用して結果を検証。
+  - `select_with_xpath()`を呼び出しXPathを利用しXMLデータを選択。
 
 ### 2. **`xml_serialize.cpp`**
 - `movie_list`データをXML形式に変換し、ファイルに保存する機能を実装します。
@@ -27,7 +28,16 @@
   - `deserialize(string_view filepath)`:
     - XMLファイルを読み込んでデータを復元します。
 
-### 4. **`movie_data.h`**
+### 4. **`xpath_selector.cpp`**
+- XPathを使用してXMLデータを検索および選択する機能を提供します。
+- **主な関数**:
+  - `select_with_xpath(const std::string &file)`:
+    - XMLファイルをロードし、XPathクエリを実行して結果を出力します。
+    - **使用例**:
+      - `/movies/movie[@year>1995]`: 年が1995より大きい`<movie>`ノードを選択。
+      - `movies/movie/cast/role[last()]`: 各`<movie>`ノードのキャストの最後の`<role>`ノードを選択。
+
+### 5. **`movie_data.h`**
 - 映画データの構造を定義するヘッダーファイル。
 - **構造体**:
   - `casting_role`: 俳優と役名の情報を含む。
@@ -45,6 +55,9 @@
 ### 2. **デシリアル化**
 1. XMLファイル（`movies.xml`）を読み取り、`deserialize()`関数でデータを復元します。
 2. 復元されたデータを確認または編集できます。
+
+### 3. **XPathデータ選択**
+`xpath_selector.cpp`ファイルで提供される`select_with_xpath()`関数を呼び出してXMLデータを選択および処理できます。
 
 ---
 
@@ -65,4 +78,4 @@
 ### 1. **コンパイル**
 ターミナルで以下のコマンドを実行してください:
 ```bash
-g++ -std=c++17 -g src/main.cpp src/xml_serialize.cpp src/xml_deserialize.cpp third_party/pugixml/pugixml.cpp -o main.exe
+g++ -std=c++17 -g src/main.cpp src/xml_serialize.cpp src/xml_deserialize.cpp src/xpath_selector.cpp third_party/pugixml/pugixml.cpp -o main.exe

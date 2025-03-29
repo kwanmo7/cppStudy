@@ -1,6 +1,7 @@
 #include "../include/movie_data.h"
 #include "xml_serialize.cpp"
 #include "xml_deserialize.cpp"
+#include "xpath_selector.cpp"
 #include <cassert>
 
 int main(){
@@ -32,4 +33,7 @@ int main(){
   assert(result.size() == 2);
   assert(result[0].title == "Matrix");
   assert(result[1].title == "riot");
+
+  select_with_xpath("movies.xml");
+
 }

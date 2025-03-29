@@ -2,6 +2,8 @@
 #include "../third_party/pugixml/pugixml.hpp"
 #include <iostream>
 
+using namespace std;
+
 // movie_list를 XML 파일로 serialize
 void serialize(movie_list const & movies, string_view filepath){
   // XML 문서 객체 생성

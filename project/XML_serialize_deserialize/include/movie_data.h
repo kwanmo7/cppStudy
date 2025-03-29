@@ -4,25 +4,23 @@
 #include <vector>
 #include <string_view>
 
-using namespace std;
-
 struct casting_role
 {
-  string actor;
-  string role;
+  std::string actor;
+  std::string role;
 };
 
 struct movie
 {
   unsigned int id;
-  string title;
+  std::string title;
   int year;
   unsigned int length;
-  vector<casting_role> cast;
-  vector<string> directors;
-  vector<string> writers;
+  std::vector<casting_role> cast;
+  std::vector<std::string> directors;
+  std::vector<std::string> writers;
 };
 
-using movie_list = vector<movie>;
+using movie_list = std::vector<movie>;
 
 #endif // MOVIE_DATA_H
