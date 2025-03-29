@@ -1,0 +1,23 @@
+# exe
+*.exe
+
+# object file
+*.o
+*.obj
+
+# debug
+*.log
+*.pdb
+
+# build
+build/
+bin/
+
+# systemfile
+.DS_Store
+Thumbs.db
+
+# IDE & setting
+*.vscode/
+*.idea/
+*.swp
