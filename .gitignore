@@ -1,5 +1,6 @@
 # exe
 *.exe
+**/*.exe
 
 # object file
 *.o
@@ -10,8 +11,8 @@
 *.pdb
 
 # build
-build/
-bin/
+**/build/
+**/bin/
 
 # systemfile
 .DS_Store
